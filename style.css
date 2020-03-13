@@ -8,7 +8,7 @@ html, body{
   }
   #camera, #camera--view, #camera--sensor, #camera--output{
       position: fixed;
-      height: 65%;
+      height: 75%;
       width: 100%;
       object-fit: cover;
       transform: scaleX(-1);

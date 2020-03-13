@@ -11,14 +11,11 @@ html, body{
       height: 65%;
       width: 100%;
       object-fit: cover;
-  }
-    #camera--view, #camera--sensor{
       transform: scaleX(-1);
-      filter: FlipH;
   }
-  #camera--view, #camera--sensor, #camera--output{
-      transform: scaleX(-1);
-      filter: FlipH;
+  #background{
+      transform: scaleX(1);
+      /* filter: FlipH; */
   }
   #background {
     background-color:#f7f7f7;

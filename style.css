@@ -12,10 +12,13 @@ html, body{
       width: 100%;
       object-fit: cover;
       transform: scaleX(-1);
+      filter: FlipH;
   }
   #background{
-      transform: scaleX(1);
-      /* filter: FlipH; */
+      position: fixed;
+      height: 65%;
+      width: 100%;
+      object-fit: cover;
   }
   #background {
     background-color:#f7f7f7;

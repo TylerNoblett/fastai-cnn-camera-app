@@ -40,7 +40,7 @@ html, body{
   h1{
     text-align: center;
     color: #373d3f;/* #24292E; *//*0A4733*/
-    margin: .25em 0em 0em 0em;
+    margin: .25em 0em .125em 0em;
   }
   p{
     text-align: left;

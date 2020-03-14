@@ -43,7 +43,7 @@ html, body{
   h1{
     text-align: center;
     color: #373d3f;/* #24292E; *//*0A4733*/
-    margin: .25em 0em .25em 0em;
+    margin: .25em 0em 0em 0em;
   }
   p{
     text-align: left;
@@ -55,6 +55,7 @@ html, body{
       background-color:#0A4733;
       color: white;
       font-size: 22px;
+      font-weight: 600px;
       border-radius: 5px;
       border: none;
       padding: 15px 20px;

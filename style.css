@@ -27,23 +27,20 @@ html, body{
     width: 100%;
     position: fixed;
     }
-   #label {
-     left: calc(50% - 100px);
-    }
-    #card {
-        margin: 5% 5% 0% 5%;
-        height: 27%;
-        top: 60%;
-        width:90%; /* 70% of the parent*/
-        border:1px solid #dadedf;
-        background-color:#ffffff;
-        border-radius: 5px;
-        position: fixed;
-    }
+  #card {
+    margin: 5% 5% 0% 5%;
+    height: 27%;
+    top: 60%;
+    width:90%; /* 70% of the parent*/
+    border:1px solid #dadedf;
+    background-color:#ffffff;
+    border-radius: 5px;
+    position: fixed;
+  }
   h1{
     text-align: center;
     color: #373d3f;/* #24292E; *//*0A4733*/
-    margin: .25em 0em 0em 0em;
+    margin: .25em 0em -.25em 0em;
   }
   p{
     text-align: left;

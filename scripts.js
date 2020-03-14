@@ -67,7 +67,7 @@ cameraTrigger.onclick = function() {
         document.getElementById("content").innerHTML =
         data.details;
         document.getElementById("location").innerHTML =
-        data.location;
+        data.object;
     });
     cameraOutput.classList.add("taken");
 };

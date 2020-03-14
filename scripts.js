@@ -51,9 +51,9 @@ cameraTrigger.onclick = function() {
 
     const requestOptions = {
         method: 'POST',
-        headers: {
-            'Accept': 'application/json'
-        },
+//         headers: {
+//             'Accept': 'application/json'
+//         },
         body: fd
     };
     fetch("https://dc2.onrender.com/analyze",requestOptions)

@@ -36,29 +36,22 @@ function dataURItoBlob(dataURI) {
     return new Blob([ia], {type:mimeString});
 }
 
-function isLoading(){
-    const loadingText = 'Loading'
-    document.getElementById("location").innerHTML = loadingText; 
-
-    setInterval(() => {
-        if (loadingText !== 'Loading...') {
-            loadingText = loadingText + '.'
-        } else {
-            loadingText = 'Loading'
-        }
-        document.getElementById("location").innerHTML = loadingText; 
-        console.log('Hello!', loadingText)
-        }, 500
-    );
-}
-
 cameraTrigger.onclick = function() {
-    let flag = false;
     document.getElementById("content").innerHTML =
     '';
-    // document.getElementById("location").innerHTML =
-    // 'Loading';
-    isLoading(flag)
+
+    let loadingText = 'Loading'
+    document.getElementById("location").innerHTML = loadingText; 
+
+    const loading = setInterval(() => {
+        if (loadingText !== 'Loading...') {
+            loadingText = loadingText + '.'
+            document.getElementById("location").innerHTML = loadingText; 
+        } else {
+            loadingText = 'Loading'
+            document.getElementById("location").innerHTML = loadingText; 
+        }
+    }, 350);
 
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
@@ -80,8 +73,7 @@ cameraTrigger.onclick = function() {
         return jsonResponse; 
     })
     .then(function(data){ 
-        console.log(data)
-        flag = true
+        clearInterval(loading);
         document.getElementById("content").innerHTML =
         data.details;
         document.getElementById("location").innerHTML =

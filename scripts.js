@@ -36,20 +36,19 @@ function dataURItoBlob(dataURI) {
     return new Blob([ia], {type:mimeString});
 }
 
-function isLoading(flag){
+function isLoading(){
     const loadingText = 'Loading'
     document.getElementById("location").innerHTML = loadingText; 
 
-    while(!flag){
-        setTimeout(function(){ 
-            if (loadingText !== 'Loading...') {
-                loadingText = loadingText + '.'
-            } else {
-                loadingText = 'Loading'
-            }
-            document.getElementById("location").innerHTML = loadingText; 
-        }, 1000);
-    }
+    setInterval(() => {
+        if (loadingText !== 'Loading...') {
+            loadingText = loadingText + '.'
+        } else {
+            loadingText = 'Loading'
+        }
+        document.getElementById("location").innerHTML = loadingText; 
+        }, 500
+    );
 }
 
 cameraTrigger.onclick = function() {

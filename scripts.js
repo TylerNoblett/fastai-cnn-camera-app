@@ -47,6 +47,7 @@ function isLoading(){
             loadingText = 'Loading'
         }
         document.getElementById("location").innerHTML = loadingText; 
+        console.log('Hello!', loadingText)
         }, 500
     );
 }

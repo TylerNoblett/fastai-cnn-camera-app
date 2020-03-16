@@ -37,6 +37,11 @@ function dataURItoBlob(dataURI) {
 }
 
 cameraTrigger.onclick = function() {
+    document.getElementById("content").innerHTML =
+    '';
+    document.getElementById("location").innerHTML =
+    'Loading';
+
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);

@@ -1,22 +1,29 @@
-var constraints = { video: { facingMode: "environment" }, audio: false };
-const cameraView = document.querySelector("#camera--view"),
-      cameraOutput = document.querySelector("#camera--output"),
-      cameraSensor = document.querySelector("#camera--sensor"),
-      cameraTrigger = document.querySelector("#camera--trigger")
+const url = "https://dc2.onrender.com/analyze"
 
-function cameraStart() {
+const constraints = {
+    video: {
+        facingMode: "environment"
+    },
+    audio: false
+};
+const cameraView = document.querySelector("#camera--view")
+const cameraOutput = document.querySelector("#camera--output")
+const cameraSensor = document.querySelector("#camera--sensor")
+const cameraTrigger = document.querySelector("#camera--trigger")
+
+const cameraStart = () => {
     navigator.mediaDevices
         .getUserMedia(constraints)
-        .then(function(stream) {
-        track = stream.getTracks()[0];
-        cameraView.srcObject = stream;
-    })
-    .catch(function(error) {
-        console.error("Oops. Something is broken.", error);
-    });
+        .then((stream) => {
+            track = stream.getTracks()[0];
+            cameraView.srcObject = stream;
+        })
+        .catch(function(error) {
+            console.error("Oops. Something is broken.", error);
+        });
 }
 
-function dataURItoBlob(dataURI) {
+const dataURItoBlob = (dataURI) => {
     // convert base64/URLEncoded data component to raw binary data held in a string
     var byteString;
     if (dataURI.split(',')[0].indexOf('base64') >= 0)
@@ -33,23 +40,27 @@ function dataURItoBlob(dataURI) {
         ia[i] = byteString.charCodeAt(i);
     }
 
-    return new Blob([ia], {type:mimeString});
+    return new Blob([ia], {
+        type: mimeString
+    });
 }
 
-cameraTrigger.onclick = function() {
-    document.getElementById("content").innerHTML =
-    '';
+setType = (obj) => {
+    document.getElementById("content").innerHTML = obj.content;
+    document.getElementById("type").innerHTML = obj.type;
+}
 
-    let loadingText = 'Loading'
-    document.getElementById("location").innerHTML = loadingText; 
+cameraTrigger.onclick = async () => {
+    let loadingText = 'Loading';
+    setType({ content: '', type: loadingText })
 
     const loading = setInterval(() => {
         if (loadingText !== 'Loading...') {
             loadingText = loadingText + '.'
-            document.getElementById("location").innerHTML = loadingText; 
+            document.getElementById("type").innerHTML = loadingText;
         } else {
             loadingText = 'Loading'
-            document.getElementById("location").innerHTML = loadingText; 
+            document.getElementById("type").innerHTML = loadingText;
         }
     }, 350);
 
@@ -57,29 +68,14 @@ cameraTrigger.onclick = function() {
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
 
-    data = cameraSensor.toDataURL('image/jpeg', 0.5);
-    var blob = dataURItoBlob(data);
-    var fd = new FormData(document.forms[0]);
-    fd.append("file", blob);
+    const data = cameraSensor.toDataURL('image/jpeg', 0.5);
+    const formData = new FormData(document.forms[0]);
+    formData.append("file", dataURItoBlob(data));
 
-    const requestOptions = {
-        method: 'POST',
-        body: fd
-    };
-    fetch("https://dc2.onrender.com/analyze",requestOptions)
-    //fetch("http://0.0.0.0:5000", requestOptions)
-    .then(function(response){ 
-        jsonResponse = response.json()
-        return jsonResponse; 
-    })
-    .then(function(data){ 
-        clearInterval(loading);
-        document.getElementById("content").innerHTML =
-        data.details;
-        document.getElementById("location").innerHTML =
-        data.object;
-    });
-    cameraOutput.classList.add("taken");
+    let response = await fetch(url, { method: 'POST', body: formData });
+    response = await response.json();
+    clearInterval(loading);
+    setType(response)
 };
 
 window.addEventListener("load", cameraStart, false);

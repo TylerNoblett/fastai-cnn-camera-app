@@ -1,74 +1,73 @@
 html, body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-
-  }
-  #camera, #camera--view, #camera--sensor, #camera--output{
-      position: fixed;
-      height: 85%;
-      width: 100%;
-      object-fit: cover;
-      transform: scaleX(-1);
-      filter: FlipH;
-  }
-  #background{
-      position: fixed;
-      height: 65%;
-      width: 100%;
-      object-fit: cover;
-  }
-  #background {
-    background-color:#f7f7f7;
-    top: 60%;
-    height: 40%;
-    width: 100%;
-    position: fixed;
-    }
-  #card {
-    margin: 5% 5% 0% 5%;
-    height: 27%;
-    top: 60%;
-    width:90%; /* 70% of the parent*/
-    border:1px solid #dadedf;
-    background-color:#ffffff;
-    border-radius: 5px;
-    position: fixed;
-  }
-  h1{
-    text-align: center;
-    color: #373d3f;/* #24292E; *//*0A4733*/
-    margin: .25em 0em .2em 0em;
-  }
-  p{
-    text-align: left;
-    color: #555f61;/*#4E5B62;*/
-    margin: 0em 1em 0em 1em;
-  }
-  #camera--trigger{
-      width: 200px;
-      background-color:#0A4733;
-      color: white;
-      font-size: 22px;
-      font-weight: 600px;
-      border-radius: 5px;
-      border: none;
-      padding: 15px 20px;
-      text-align: center;
-      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-      position: fixed;
-      bottom: 2%;
-      left: calc(50% - 100px);
-  }
-  .taken{
-      height: 100px!important;
-      width: 100px!important;
-      transition: all 0.5s ease-in;
-      border: solid 3px white;
-      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
-      top: 20px;
-      right: 20px;
-      z-index: 2;
-  }
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+#camera, #camera--view, #camera--sensor, #camera--output{
+  position: fixed;
+  height: 85%;
+  width: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  filter: FlipH;
+}
+#background{
+  position: fixed;
+  height: 65%;
+  width: 100%;
+  object-fit: cover;
+}
+#background {
+  background-color:#f7f7f7;
+  top: 60%;
+  height: 40%;
+  width: 100%;
+  position: fixed;
+}
+#card {
+  margin: 5% 5% 0% 5%;
+  height: 27%;
+  top: 60%;
+  width:90%;
+  border:1px solid #dadedf;
+  background-color:#ffffff;
+  border-radius: 5px;
+  position: fixed;
+}
+h1{
+  text-align: center;
+  color: #373d3f;
+  margin: .25em 0em .2em 0em;
+}
+p{
+  text-align: left;
+  color: #555f61;
+  margin: 0em 1em 0em 1em;
+}
+#camera--trigger{
+  width: 200px;
+  background-color:#0A4733;
+  color: white;
+  font-size: 22px;
+  font-weight: 600px;
+  border-radius: 5px;
+  border: none;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+  position: fixed;
+  bottom: 2%;
+  left: calc(50% - 100px);
+}
+.taken{
+  height: 100px!important;
+  width: 100px!important;
+  transition: all 0.5s ease-in;
+  border: solid 3px white;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+}

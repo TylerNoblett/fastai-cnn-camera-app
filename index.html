@@ -1,30 +1,26 @@
 <html lang=”en”>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Name of your awesome camera app -->
     <title>Camera App Demo</title>
-    <!-- Link to your main style sheet-->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Camera -->
     <main id="camera">
-        <!-- Camera sensor -->
         <canvas id="camera--sensor"></canvas>
-        <!-- Camera view -->
         <video id="camera--view" autoplay playsinline></video>
     </main>
     <div id="background"></div>
-        <div id="card">
-            <h1 id="location">Get Started</h1>
-            <p id="content">This demo app recognizes common office items (pens, computers, desks, chairs) and other everyday items (people, cars, trees).</p>
-        </div>
-        <!-- Camera trigger -->
-        <button id="camera--trigger">Take a picture</button>
+    <div id="card">
+        <h1 id="type">Get Started</h1>
+        <p id="content">This demo app recognizes common office items (pens, computers, desks, chairs) and other everyday items (people, cars, trees).</p>
     </div>
-    <!-- Reference to your JavaScript file -->
+    <button id="camera--trigger">Take a picture</button>
+    </div>
     <script src="scripts.js"></script>
 </body>
+
 </html>

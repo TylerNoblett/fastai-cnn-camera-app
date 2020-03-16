@@ -36,19 +36,34 @@ function dataURItoBlob(dataURI) {
     return new Blob([ia], {type:mimeString});
 }
 
+function isLoading(flag){
+    const loadingText = 'Loading'
+    document.getElementById("location").innerHTML = loadingText; 
+
+    while(!flag){
+        setTimeout(function(){ 
+            if (loadingText !== 'Loading...') {
+                loadingText = loadingText + '.'
+            } else {
+                loadingText = 'Loading'
+            }
+            document.getElementById("location").innerHTML = loadingText; 
+        }, 1000);
+    }
+}
+
 cameraTrigger.onclick = function() {
+    let flag = false;
     document.getElementById("content").innerHTML =
     '';
-    document.getElementById("location").innerHTML =
-    'Loading';
+    // document.getElementById("location").innerHTML =
+    // 'Loading';
+    isLoading(flag)
 
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-    /*
-    cameraOutput.src = cameraSensor.toDataURL('image/jpeg', 0.5);
-    data = cameraOutput.src;
-    */
+
     data = cameraSensor.toDataURL('image/jpeg', 0.5);
     var blob = dataURItoBlob(data);
     var fd = new FormData(document.forms[0]);
@@ -56,9 +71,6 @@ cameraTrigger.onclick = function() {
 
     const requestOptions = {
         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json'
-//         },
         body: fd
     };
     fetch("https://dc2.onrender.com/analyze",requestOptions)
@@ -69,6 +81,7 @@ cameraTrigger.onclick = function() {
     })
     .then(function(data){ 
         console.log(data)
+        flag = true
         document.getElementById("content").innerHTML =
         data.details;
         document.getElementById("location").innerHTML =

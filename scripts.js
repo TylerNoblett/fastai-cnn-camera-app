@@ -33,9 +33,9 @@ const URIToBlob = (dataURI) => {
     });
 }
 
-const setType = (obj) => {
+const setResult = (obj) => {
     document.getElementById("content").innerHTML = obj.content;
-    document.getElementById("type").innerHTML = obj.type;
+    document.getElementById("result").innerHTML = obj.result;
 }
 
 const setSensors = () => {
@@ -62,18 +62,18 @@ const fetchResponse = async (formData) => {
 
 cameraTrigger.onclick = async () => {
     let loadingText = 'Loading';
-    setType({
+    setResult({
         content: '',
-        type: loadingText
+        result: loadingText
     });
 
     const loading = setInterval(() => {
         if (loadingText !== 'Loading...') {
             loadingText = loadingText + '.';
-            document.getElementById("type").innerHTML = loadingText;
+            document.getElementById("result").innerHTML = loadingText;
         } else {
             loadingText = 'Loading';
-            document.getElementById("type").innerHTML = loadingText;
+            document.getElementById("result").innerHTML = loadingText;
         }
     }, 350);
 
@@ -81,7 +81,7 @@ cameraTrigger.onclick = async () => {
     const formData = createFormData();
     const response = await fetchResponse(formData);
     clearInterval(loading);
-    setType(response);
+    setResult(response);
 };
 
 window.addEventListener("load", cameraStart, false);

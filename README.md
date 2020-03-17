@@ -2,7 +2,7 @@
 This is a web app that allows a user to take a picture and send it to a fast.ai CNN model running on [render](render.com). 
 The modified render.com server will the return a classification of the image along with any related text.
 
-I'd like to give a major shoutout to @abenjamin765 whose [tutorial/repo](https://github.com/abenjamin765/camera-app) was instrumental in creating this application. 
+I'd like to give a major shoutout to [@abenjamin765](https://github.com/abenjamin765) whose [tutorial/repo](https://github.com/abenjamin765/camera-app) was instrumental in creating this application. 
 
 ## Demo
 Check out a demo app [here](https://tylernoblett.github.io/fastai-cnn-camera-app/). The app recognizes everyday objects (cars, people, trees, computers, chairs, etc).

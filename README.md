@@ -1,5 +1,5 @@
 # Overview
-This repo allows you create a web app that allows a user to take a picture and send it to a fast.ai CNN model running on [render](render.com). 
+This is a web app that allows a user to take a picture and send it to a fast.ai CNN model running on [render](render.com). 
 The modified render.com server will the return a classification of the image along with any related text.
 
 I'd like to give a major shoutout to @abenjamin765 whose [tutorial/repo](https://github.com/abenjamin765/camera-app) was instrumental in creating this application. 

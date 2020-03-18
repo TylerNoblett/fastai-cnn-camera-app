@@ -3,6 +3,8 @@ This is a web app that allows a user to take a picture using an interface simila
 After the picture is taken, it's sent to a fast.ai CNN model running on [render](render.com). 
 The modified server will the return a classification of the image along with related content.
 
+There are a handful of prebuilt apps that allow a user to upload a photo ([this](https://github.com/npatta01/web-deep-learning-classifier) and [this](https://github.com/render-examples/fastai-v3)), but I couldn't find an app that allowed the user to skip the step of manually uploading it.
+
 I'd like to give a major shoutout to [@abenjamin765](https://github.com/abenjamin765) whose [tutorial/repo](https://github.com/abenjamin765/camera-app) was instrumental in creating this application. 
 
 ## Demo

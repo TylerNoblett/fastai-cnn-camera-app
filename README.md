@@ -40,7 +40,7 @@ return JSONResponse({
 The easiest solution is [github pages](https://pages.github.com/); however, your repo must either be public or you'll need a paid github plan. Within the repo go to settings and search for `github pages` to get started.
 
 ### Netlify
-Netlify is free and is only more marginally tedious to set up, and has a lot of great features that github pages doesn't have.
+[Netlify](https://www.netlify.com/) is free and is only more marginally tedious to set up, and has a lot of great features that github pages doesn't have.
 
 ## In the pipeline
 I'm hoping to add support for flask and create a template server you can use if you'd prefer to use the app without render.

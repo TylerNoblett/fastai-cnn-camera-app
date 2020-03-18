@@ -1,4 +1,4 @@
-# Fast.ai CNN Camera App
+# CNN Camera App (Using Fast.ai models)
 ## Overview
 This is a web app that allows a user to take a picture using an interface similar to a native camera app. 
 After the picture is taken, it's sent to a fast.ai CNN model running on [render](https://www.render.com). 

@@ -13,7 +13,7 @@ Check out a demo app [here](https://tylernoblett.github.io/fastai-cnn-camera-app
 
 ## Getting Started
 To get started, fork this repo. A few things you'll need to change:
-1. In `scripts.js`, change `const url = "https://dc2.onrender.com/analyze"` to the url for your render endpoint.
+1. In `scripts.js`, change `const url` to the url for your render endpoint.
 2. In `index.hmtl`, you may want to modify the starting app description (in `<p id="content">`), the header (`<h1 id="type">`), and the title `<title>`.
 3. Follow [this guide](https://course.fast.ai/deployment_render.html) to set up your render server if you haven't already.
 4. In `server.py` in your render repo, change this line `return JSONResponse({'result': str(prediction)})` to something like this. You can take a look at the server code for the demo project [here](https://github.com/TylerNoblett/fastai-v3/blob/master/app/server.py).

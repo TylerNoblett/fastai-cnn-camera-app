@@ -1,4 +1,4 @@
-const url = "https://camera-app-backend.onrender.com/analyze"
+const url = "https://camera-app-backend-demo.onrender.com/analyze"
 
 const constraints = {
     video: {

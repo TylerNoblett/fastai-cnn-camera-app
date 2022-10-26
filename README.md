@@ -11,7 +11,7 @@ I'd like to give a major shoutout to [@abenjamin765](https://github.com/abenjami
 NOTE: This is not an official fast.ai product
 
 ## Demo
-Check out a demo app [here](https://tylernoblett.github.io/fastai-cnn-camera-app/). The demo app recognizes everyday objects (cars, people, trees, computers, chairs, pens, and chairs).
+~~Check out a demo app [here](https://tylernoblett.github.io/fastai-cnn-camera-app/). The demo app recognizes everyday objects (cars, people, trees, computers, chairs, pens, and chairs).~~
 
 ## Getting Started
 To get started, fork this repo. A few things you'll need to change:
